@@ -2,6 +2,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Source Sans Pro', sans-serif;
+    background-image: url('../images/back.jpg');
 }
 
     body a {
@@ -5224,7 +5225,7 @@ a.morebtn {
     color: #fff;
 }
 
-#searchBox {
+#search_btn, #searchBox {
     /*padding: 25px;*/
     height: 50px;
 }
