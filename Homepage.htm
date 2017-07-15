@@ -1,0 +1,257 @@
+﻿<html>
+<head title="Swiggy - Food delivery application">
+    <link href="CSS/styles.css" rel="stylesheet" />
+    <script src="CSS/script.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=sans-serif">
+    <style>
+        body {
+            font-family: serif;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            $('.search-panel .dropdown-menu').find('a').click(function (e) {
+                e.preventDefault();
+                var param = $(this).attr("href").replace("#", "");
+                var concept = $(this).text();
+                $('.search-panel span#search_concept').text(concept);
+                $('.input-group #search_param').val(param);
+            });
+
+            $("#searchBox").keyup(function () {
+                var searchQuery = $("#txt_Search").val();
+                $('#searchResults').show();
+            });
+            $("#meg_nonveg").on("click", function () {
+                $("#searchResults").removeAttr("overflow").animate({ width: "662px" }, 800);
+                var html = "<div id='meg_chi_biriyani' style='margin-left: 10px; margin-top: 10px; height: 70px; padding: 5px; background-color: #F5F5F5'><div style='float: left'><img src='Images/ChickenBiriyani.jpg' width='90' height='60' /></div><div style='float: left; margin-left: 10px;'><span class='fcblack fs15' style='display: inline-block; width: 150px'>Chicken Biriyani</span><span id='remove_meg_chi_biriyani' class='glyphicon glyphicon-remove fs13 cp' aria-hidden='true'></span><br /><span class='glyphicon glyphicon-star fs13 fcgray' aria-hidden='true'></span><span class='glyphicon glyphicon-star fs13 fcgray' aria-hidden='true'></span><span class='glyphicon glyphicon-star fs13 fcgray' aria-hidden='true'></span><br /><span class='fcblack' style='display: inline-block; width: 150px'>Rs.150 /-</span><a href='Cart.html' target='_new'><span class='glyphicon glyphicon-shopping-cart fs13' aria-hidden='true'></span></a></div></div>";
+                $('#compareDiv').append(html);
+                var html = "<div id='meg_mut_biriyani' style='margin-left: 10px; margin-top: 10px; height: 70px; padding: 5px; background-color: #F5F5F5'><div style='float: left'><img src='Images/MuttonBiriyani.jpg' width='90' height='60' /></div><div style='float: left; margin-left: 10px;'><span class='fcblack fs15' style='display: inline-block; width: 150px'>Mutton Biriyani</span><span id='remove_meg_mut_biriyani' class='glyphicon glyphicon-remove fs13 cp' aria-hidden='true'></span><br /><span class='glyphicon glyphicon-star fs13 fcgray' aria-hidden='true'></span><span class='glyphicon glyphicon-star fs13 fcgray' aria-hidden='true'></span><span class='glyphicon glyphicon-star fs13 fcgray' aria-hidden='true'></span><span class='glyphicon glyphicon-star fs13 fcgray' aria-hidden='true'></span><span class='glyphicon glyphicon-star fs13 fcgray' aria-hidden='true'></span><br /><span class='fcblack' style='display: inline-block; width: 150px'>Rs.230 /-</span><span class='glyphicon glyphicon-shopping-cart fs13' aria-hidden='true'></span></div></div>";
+                $('#compareDiv').append(html);
+                $('#PriceList').delay(10000).show();
+            });
+
+            $("#meg_veg").on("click", function () {
+                $("#searchResults").removeAttr("overflow").animate({ width: "662px" }, 800);
+                var html = "<div id='meg_pan_biriyani' style='margin-left: 10px; margin-top: 10px; height: 70px; padding: 5px; background-color: #F5F5F5'><div style='float: left'><img src='Images/paneerBiriyani.jpg' width='90' height='60' /></div><div style='float: left; margin-left: 10px;'><span class='fcblack fs15' style='display: inline-block; width: 150px'>Paneer Biriyani</span><span id='remove_meg_pan_biriyani' class='glyphicon glyphicon-remove fs13 cp' aria-hidden='true'></span><br /><span class='glyphicon glyphicon-star fs13 fcgray' aria-hidden='true'></span><span class='glyphicon glyphicon-star fs13 fcgray' aria-hidden='true'></span><span class='glyphicon glyphicon-star fs13 fcgray' aria-hidden='true'></span><span class='glyphicon glyphicon-star fs13 fcgray' aria-hidden='true'></span><br /><span class='fcblack' style='display: inline-block; width: 150px'>Rs.130 /-</span><span class='glyphicon glyphicon-shopping-cart fs13' aria-hidden='true'></span></div></div>";
+                $('#compareDiv').append(html);
+                var html = "<div id='meg_mixveg_biriyani' style='margin-left: 10px; margin-top: 10px; height: 70px; padding: 5px; background-color: #F5F5F5'><div style='float: left'><img src='Images/MixVegBiriyani.jpg' width='90' height='60' /></div><div style='float: left; margin-left: 10px;'><span class='fcblack fs15' style='display: inline-block; width: 150px'>Mixed Veg Biriyani</span><span id='remove_meg_mixveg_biriyani' class='glyphicon glyphicon-remove fs13 cp' aria-hidden='true'></span><br /><span class='glyphicon glyphicon-star fs13 fcgray' aria-hidden='true'></span><span class='glyphicon glyphicon-star fs13 fcgray' aria-hidden='true'></span><br /><span class='fcblack' style='display: inline-block; width: 150px'>Rs.140 /-</span><span class='glyphicon glyphicon-shopping-cart fs13' aria-hidden='true'></span></div></div>";
+                $('#compareDiv').append(html);
+                $('#PriceList').delay(10000).show();
+            });
+
+            $(document).on("click", "#remove_meg_pan_biriyani", function () {
+                $("#meg_pan_biriyani").remove();
+                if ($('#compareDiv').children().length <= 0) {
+                    $("#searchResults").attr("overflow", "hidden").animate({ width: "320px" }, 800);
+                    $("#PriceList").hide();
+                }
+            });
+            $(document).on("click", "#remove_meg_mixveg_biriyani", function () {
+                $("#meg_mixveg_biriyani").remove();
+                if ($('#compareDiv').children().length <= 0) {
+                    $("#searchResults").attr("overflow", "hidden").animate({ width: "320px" }, 800);
+                    $("#PriceList").hide();
+                }
+            });
+
+            $(document).on("click", "#remove_meg_mut_biriyani", function () {
+                $("#meg_mut_biriyani").remove();
+                if ($('#compareDiv').children().length <= 0) {
+                    $("#searchResults").attr("overflow", "hidden").animate({ width: "320px" }, 800);
+                    $("#PriceList").hide();
+                }
+            });
+            $(document).on("click", "#remove_meg_chi_biriyani", function () {
+                $("#meg_chi_biriyani").remove();
+                if ($('#compareDiv').children().length <= 0) {
+                    $("#searchResults").attr("overflow", "hidden").animate({ width: "320px" }, 800);
+                    $("#PriceList").hide();
+                }
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <div id="searchResults" class="container" style="overflow: scroll; padding-left: 0px; padding-right: 0px; position: fixed; width: 320px; overflow: hidden; border: 1px solid #C0C0C0; height: 350px; color: gray; margin-top: 100px; margin-left: 472px">
+        <div style="height: 45px; background-color: #f5f5f5; border: #C0C0C0">
+            <span style="color: #4A4A4A; margin-left: 30px;" class="fl">RESTAURANTS</span>
+            <div class="fr" style="display: none" id="PriceList">
+                <span class="glyphicon glyphicon-signal fs13" aria-hidden="true"></span><span style="color: #4A4A4A; margin-left: 8px; margin-right: 40px">Price Comparision</span>
+            </div>
+        </div>
+        <div style="border: #C0C0C0;">
+            <div style="width: 300px; margin-left: 20px; margin-top: 20px; float: left">
+                <div>
+                    <div style="float: left">
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/c_scale,f_auto,fl_lossy,h_55,q_auto,w_105/eqzmxos9qtwcgptuotax" />
+                    </div>
+                    <div style="float: left; margin-left: 10px">
+                        <span class="fcblack fs15">Meghana Foods</span><br />
+                        <span style="" class="fs13">Biryani</span><br />
+                        <span class="glyphicon glyphicon-plus-sign fcgreen fs13" id="meg_veg" aria-hidden="true" style="float: right; cursor: pointer" title="Veg Price list"></span>
+                        <span class="glyphicon glyphicon-plus-sign fcred fs13" id="meg_nonveg" aria-hidden="true" style="float: right; margin-right: 5px; cursor: pointer" title="Non Veg Price list"></span>
+                    </div>
+                </div>
+                <hr style="clear: both; margin-top: 73px">
+                <div style="clear: both">
+                    <div style="float: left">
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/c_scale,f_auto,fl_lossy,h_55,q_auto,w_105/ynv7kgpbox94o7ulgehu" />
+                    </div>
+                    <div style="float: left; margin-left: 10px">
+                        <span class="fcblack">Biriyani Paradise</span><br />
+                        <span style="" class="fs12">Andhra, South Indian</span><br />
+                        <span class="glyphicon glyphicon-plus-sign fcgreen fs13" id="Span1" aria-hidden="true" style="margin-right: 8px; float: right; cursor: pointer" title="Veg Price list"></span>
+                        <span class="glyphicon glyphicon-plus-sign fcred fs13" id="Span2" aria-hidden="true" style="margin-right: 5px; float: right; cursor: pointer" title="Non Veg Price list"></span>
+                    </div>
+                </div>
+                <hr style="clear: both; margin-top: 92px">
+                <div style="clear: both">
+                    <div style="float: left">
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/c_scale,f_auto,fl_lossy,h_55,q_auto,w_105/wcq2jdrek3lv7bbaihbe" />
+                    </div>
+                    <div style="float: left; margin-left: 10px">
+                        <span class="fcblack">Five Star Chicken</span><br />
+                        <span style="" class="fs12">Fast Food</span>
+                    </div>
+                </div>
+                <hr style="clear: both; margin-top: 92px">
+            </div>
+            <div style="float: left; border-left: 1px solid #C0C0C0; height: 290px; margin-left: 10px;" id="compareDiv">
+                <!--    <div id="meg_chi_biriyani" style="margin-left: 10px; margin-top: 10px; height: 70px; padding: 5px; background-color: #F5F5F5">
+                    <div style="float: left">
+                        <img src="Images/ChickenBiriyani.jpg" width="90" height="60" />
+                    </div>
+                    <div style="float: left; margin-left: 10px;">
+                        <span class="fcblack fs15" style="display: inline-block; width: 150px">Chicken Biriyani</span>
+                        <span id="remove_meg_chi_biriyani" class="glyphicon glyphicon-remove fs13 cp" aria-hidden="true"></span>
+                        <br />
+                        <span class="glyphicon glyphicon-star fs13 fcgray" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-star fs13 fcgray" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-star fs13 fcgray" aria-hidden="true"></span>
+                        <br />
+                        <span class="fcblack" style="display: inline-block; width: 150px">Rs.150 /-</span>
+                        <span class="glyphicon glyphicon-shopping-cart fs13" aria-hidden="true"></span>
+                    </div>
+                </div>-->
+                <!--    <div id="meg_mut_biriyani" style="margin-left: 10px; margin-top: 10px; height: 70px; padding: 5px; background-color: #F5F5F5">
+                    <div style="float: left">
+                        <img src="Images/MuttonBiriyani.jpg" width="90" height="60" />
+                    </div>
+                    <div style="float: left; margin-left: 10px;">
+                        <span class="fcblack fs15" style="display: inline-block; width: 150px">Mutton Biriyani</span>
+                        <span id="remove_meg_mut_biriyani" class="glyphicon glyphicon-remove fs13 cp" aria-hidden="true"></span>
+                        <br />
+                        <span class="glyphicon glyphicon-star fs13 fcgray" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-star fs13 fcgray" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-star fs13 fcgray" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-star fs13 fcgray" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-star fs13 fcgray" aria-hidden="true"></span>
+                        <br />
+                        <span class="fcblack" style="display: inline-block; width: 150px">Rs.230 /-</span>
+                        <span class="glyphicon glyphicon-shopping-cart fs13" aria-hidden="true"></span>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <div id="flipkart-navbar">
+        <div class="container">
+            <div class="row row1">
+                <ul class="largenav pull-right">
+                    <li class="upper-links"><a class="links" href="http://clashhacks.in/">Link 1</a></li>
+                    <li class="upper-links"><a class="links" href="https://campusbox.org/">Link 2</a></li>
+                    <li class="upper-links"><a class="links" href="http://clashhacks.in/">Link 3</a></li>
+                    <li class="upper-links"><a class="links" href="http://clashhacks.in/">Link 4</a></li>
+                    <li class="upper-links"><a class="links" href="http://clashhacks.in/">Link 5</a></li>
+                    <li class="upper-links"><a class="links" href="http://clashhacks.in/">Link 6</a></li>
+                    <li class="upper-links">
+                        <a class="links" href="http://clashhacks.in/">
+                            <svg class="" width="16px" height="12px" style="overflow: visible;">
+                                <path d="M8.037 17.546c1.487 0 2.417-.93 2.417-2.417H5.62c0 1.486.93 2.415 2.417 2.415m5.315-6.463v-2.97h-.005c-.044-3.266-1.67-5.46-4.337-5.98v-.81C9.01.622 8.436.05 7.735.05 7.033.05 6.46.624 6.46 1.325v.808c-2.667.52-4.294 2.716-4.338 5.98h-.005v2.972l-1.843 1.42v1.376h14.92v-1.375l-1.842-1.42z" fill="#fff"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="upper-links dropdown"><a class="links" href="http://clashhacks.in/">Dropdown</a>
+                        <ul class="dropdown-menu">
+                            <li class="profile-li"><a class="profile-links" href="http://yazilife.com/">Link</a></li>
+                            <li class="profile-li"><a class="profile-links" href="http://hacksociety.tech/">Link</a></li>
+                            <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
+                            <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
+                            <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
+                            <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
+                            <li class="profile-li"><a class="profile-links" href="http://clashhacks.in/">Link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="row row2">
+                <div class="col-sm-2">
+                    <h2 style="margin: 0px;"><span class="smallnav menu" onclick="openNav()">☰ Brand</span></h2>
+                    <h1 style="margin: 0px;"><span class="largenav">Brand</span></h1>
+                </div>
+                <div class="col-sm-8 col-xs-11">
+                    <div class="row">
+                        <div class="input-group" style="border-radius: 0px">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" id="filterByButton" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span id="search_concept" style="color: gray">DELIVERY LOCATION</span> <span class="caret"></span>
+                                    <br />
+                                    <span style="margin-left: -12px;">K R Puram, Bangalore</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#contains">Contains</a></li>
+                                    <li><a href="#its_equal">It's equal</a></li>
+                                    <li><a href="#greather_than">Greather than ></a></li>
+                                    <li><a href="#less_than">Less than < </a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#all">Anything</a></li>
+                                </ul>
+                            </div>
+                            <input type="hidden" name="search_param" value="all" id="search_param">
+                            <input type="text" autofocus="autofocus" id="searchBox" class="form-control" name="x" placeholder="Search for restaurants, dishes or cuisines">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart largenav col-sm-2">
+                    <a class="cart-button">
+                        <svg class="cart-svg " width="16 " height="16 " viewBox="0 0 16 16 ">
+                            <path d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86 " fill="#fff "></path>
+                        </svg>
+                        Link
+                   
+                        <span class="item-number ">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <div class="container" style="background-color: #2874f0; padding-top: 10px;">
+            <span class="sidenav-heading">Home</span>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        </div>
+        <a href="http://clashhacks.in/">Link</a>
+        <a href="http://clashhacks.in/">Link</a>
+        <a href="http://clashhacks.in/">Link</a>
+        <a href="http://clashhacks.in/">Link</a>
+    </div>
+</body>
+</html>
